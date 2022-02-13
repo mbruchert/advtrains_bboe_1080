@@ -71,7 +71,7 @@ advtrains.register_wagon("engine_BBOE_1080", {
 	wagon_span=3.0,
 	is_locomotive=true,
 	collisionbox = {-1.0,-0.5,-1.0, 1.0,2.5,1.0},
-	drops={"advtrains_engine_BBÖ_1080"},
+	drops={"advtrains:engine_BBOE_1080"},
 }, S("BBÖ 1080 "), "advtrains_engine_BBOE_1080_inv.png")
 
 advtrains.register_wagon("wagon_ware", {
@@ -83,17 +83,12 @@ advtrains.register_wagon("wagon_ware", {
 	visual_size = {x=1, y=1},
 	wagon_span=2.8,
 	collisionbox = {-1.0,-0.5,-1.0, 1.0,2.5,1.0},
-	drops={"advtrains:wagon_coal"},
+	drops={"advtrains:wagon_ware"},
 	has_inventory = true,
-	get_inventory_formspec = function(self)
-		return "size[8,11]"..
-			"list[detached:advtrains_wgn_"..self.unique_id..";box;0,0;8,6;]"..
-			"list[current_player;main;0,7;8,4;]"..
-			"listring[]"
-	end,
+	get_inventory_formspec = advtrains.standard_inventory_formspec,
 	inventory_list_sizes = {
 		box=8*2,
 	},
-}, S("Ware Wagon(BBÖ)"), "advtrains_wagon_BBOE_ware_inv.png")
+}, S("Ware Wagon (BBÖ)"), "advtrains_wagon_BBOE_ware_inv.png")
 
 
